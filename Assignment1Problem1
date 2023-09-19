@@ -1,0 +1,30 @@
+#Assignment-6: JSON and OOP Assignment
+
+Assignment 1-Problem 1
+1. Create a JSON file (employee.json) containing employee information of minimum 5 employees. Each employee information consists of Name,
+DOB, Height, City, State. Write a python program that reads this information from the JSON file and saves the information into a list of objects of Employee class.
+Finally print the list of the Employee objects.
+
+CODE:
+
+import json
+
+class Employee:
+    def _init_(self, name, dob, height, city, state):
+        self.name = name
+        self.dob = dob
+        self.height = height
+        self.city = city
+        self.state = state
+
+with open('employee.json') as file:
+    data = json.load(file)
+
+employee_list = []
+
+for employee_data in data:
+    name = employee_data['name']
+    dob = employee_data['DOB']
+    height = employee_data['Height']
+    city = employee_data['City']
+    state = employee_data['State']
